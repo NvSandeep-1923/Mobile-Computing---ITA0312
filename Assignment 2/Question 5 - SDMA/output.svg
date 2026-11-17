@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="390" viewBox="0 0 1500 390">
+<rect width="100%" height="100%" fill="#111827"/><rect width="100%" height="58" fill="#1f2937"/>
+<circle cx="25" cy="29" r="8" fill="#ef4444"/><circle cx="51" cy="29" r="8" fill="#f59e0b"/><circle cx="77" cy="29" r="8" fill="#22c55e"/>
+<text x="105" y="37" fill="#e5e7eb" font-family="Arial" font-size="22" font-weight="bold">Q5 — SDMA UNIFORM LINEAR ARRAY</text>
+<g fill="#e5e7eb" font-family="monospace" font-size="18">
+<text x="30" y="92">$ python Q5_sdma.py — completed successfully</text>
+<text x="30" y="132">Uniform linear array; half-wavelength spacing; broadside steering.</text>
+<text x="30" y="182">Elements | Approx. HPBW (deg) | First sampled separation meeting 10 dB SIR</text>
+<text x="30" y="222">2        | 101.6              | 53°</text>
+<text x="30" y="262">4        | 50.8               | 23°</text>
+<text x="30" y="302">8        | 25.4               | 11°</text>
+<text x="30" y="342">16       | 12.7               | 6°</text>
+</g>
+</svg>

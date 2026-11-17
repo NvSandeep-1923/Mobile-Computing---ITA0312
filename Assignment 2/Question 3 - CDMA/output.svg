@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="430" viewBox="0 0 1500 430">
+<rect width="100%" height="100%" fill="#111827"/><rect width="100%" height="58" fill="#1f2937"/>
+<circle cx="25" cy="29" r="8" fill="#ef4444"/><circle cx="51" cy="29" r="8" fill="#f59e0b"/><circle cx="77" cy="29" r="8" fill="#22c55e"/>
+<text x="105" y="37" fill="#e5e7eb" font-family="Arial" font-size="22" font-weight="bold">Q3 — CDMA SPREADING, CORRELATION AND NEAR-FAR</text>
+<g fill="#e5e7eb" font-family="monospace" font-size="18">
+<text x="30" y="92">$ python Q3_cdma.py — completed successfully</text>
+<text x="30" y="132">Length | Processing gain (dB) | K=2 BER | K=4 BER | K=8 BER</text>
+<text x="30" y="172">8      | 9.03                 | 0.00192 | 0.00192 | 0.00200</text>
+<text x="30" y="212">16     | 12.04                | 0.00200 | 0.00167 | 0.00192</text>
+<text x="30" y="252">64     | 18.06                | 0.00167 | 0.00208 | 0.00158</text>
+<text x="30" y="292">Walsh check: auto C0,C0=1.0; cross C0,C1=0.0.</text>
+<text x="30" y="332">Near-far (one-chip offset, L=8): equal-power BER=0.03842; 10× interferer BER=0.47267.</text>
+</g><text x="30" y="385" fill="#a7f3d0" font-family="monospace" font-size="18">Timing offset can destroy orthogonality and expose a weak user to near-far interference.</text>
+</svg>

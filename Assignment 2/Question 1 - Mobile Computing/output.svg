@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="430" viewBox="0 0 1500 430">
+<rect width="100%" height="100%" fill="#111827"/><rect width="100%" height="58" fill="#1f2937"/>
+<circle cx="25" cy="29" r="8" fill="#ef4444"/><circle cx="51" cy="29" r="8" fill="#f59e0b"/><circle cx="77" cy="29" r="8" fill="#22c55e"/>
+<text x="105" y="37" fill="#e5e7eb" font-family="Arial" font-size="22" font-weight="bold">Q1 — MOBILE COMPUTING: STORE-AND-FORWARD</text>
+<g fill="#e5e7eb" font-family="monospace" font-size="18">
+<text x="30" y="92">$ python Q1_mobile_computing.py — completed successfully</text>
+<text x="30" y="132">Model: 1,000 updates; one update per interval; link-up probability varies.</text>
+<text x="30" y="162">Queue flushes all pending updates when connectivity returns (no rate cap).</text>
+<text x="30" y="212">Availability | Immediate OK | Immediate lost | Queue delivered | Pending | Avg delay</text>
+<text x="30" y="252">90%          | 883           | 117             | 1000            | 0       | 0.13</text>
+<text x="30" y="292">60%          | 611           | 389             | 998             | 2       | 0.62</text>
+<text x="30" y="332">30%          | 323           | 677             | 999             | 1       | 1.80</text>
+</g><text x="30" y="380" fill="#a7f3d0" font-family="monospace" font-size="18">Conclusion: store-and-forward preserves failed updates, at the cost of delay.</text>
+</svg>

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="450" viewBox="0 0 1500 450">
+<rect width="100%" height="100%" fill="#111827"/><rect width="100%" height="58" fill="#1f2937"/>
+<circle cx="25" cy="29" r="8" fill="#ef4444"/><circle cx="51" cy="29" r="8" fill="#f59e0b"/><circle cx="77" cy="29" r="8" fill="#22c55e"/>
+<text x="105" y="37" fill="#e5e7eb" font-family="Arial" font-size="22" font-weight="bold">Q2 — FDMA VS TDMA RESOURCE SHARING</text>
+<g fill="#e5e7eb" font-family="monospace" font-size="18">
+<text x="30" y="92">$ python Q2_fdma_tdma.py — completed successfully</text>
+<text x="30" y="132">FDMA: 80 channels; estimated payload-equivalent bandwidth = 1,680 kHz.</text>
+<text x="30" y="162">TDMA: 80 nominal slots; 72 usable after 10% time/control overhead.</text>
+<text x="30" y="212">Workload                    Demand    Peak  FDMA util  FDMA blocked  TDMA util  TDMA blocked</text>
+<text x="30" y="252">Continuous voice             200000      40     50.00%            0     55.56%             0</text>
+<text x="30" y="292">Bursty data (10% duty)        50282      23     12.57%            0     13.97%             0</text>
+<text x="30" y="332">Mixed 70/30                  155061      38     38.77%            0     43.07%             0</text>
+</g><text x="30" y="385" fill="#a7f3d0" font-family="monospace" font-size="18">Bursty traffic leaves dedicated capacity idle; TDMA schedules active bursts.</text>
+</svg>
