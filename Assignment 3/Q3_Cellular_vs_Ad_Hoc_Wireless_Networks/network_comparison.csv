@@ -1,0 +1,9 @@
+Parameter,Cellular Network,Ad Hoc Network
+"Infrastructure","Required (base stations)","Not required"
+"Communication","Through base stations","Direct or multi-hop"
+"Routing","Infrastructure-assisted","Distributed routing"
+"Mobility","Handoff between cells","Dynamic topology / route changes"
+"Topology","Planned cells","Frequently changing"
+"Scalability","Generally high","Depends on network size"
+"Failure handling","Alternative infrastructure","Other nodes / alternate paths"
+"Applications","Public mobile service","Disaster / field networks"
