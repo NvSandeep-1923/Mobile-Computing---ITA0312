@@ -1,5 +1,9 @@
 # Q3 – Cellular Networks versus Ad Hoc Wireless Networks
 
-This question is a comparative architecture/design exercise in the supplied assignment. It does not request a Python implementation. The assignment answer distinguishes infrastructure-based cellular communication from infrastructure-less, dynamic, multi-hop ad hoc communication, and selects ad hoc networking for disaster environments without fixed infrastructure.
+**Python demonstration:** `q3_network_comparison.py`
 
-No Python file or fabricated output screenshot is included.
+Prints the assignment's qualitative comparison of infrastructure, communication, routing, mobility, topology, scalability, failure handling and applications. Also creates a CSV comparison table.
+
+**Files:** Python source, captured console output, console-output image, and CSV table.
+
+**Scope:** This is a qualitative assignment-based comparison, not a measured network performance benchmark.
