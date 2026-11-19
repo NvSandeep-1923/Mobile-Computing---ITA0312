@@ -1,0 +1,1 @@
+Alternate path after link failure: Ambulance -> Police -> Rescue-2 -> Gateway -> Hospital
