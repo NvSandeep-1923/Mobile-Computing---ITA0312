@@ -1,0 +1,17 @@
+PROCEDURE ADAPT_FEED()
+params <- (quality=MEDIUM, cache=DEFAULT, prefetch=3)
+metrics <- MEASURE(frameTimeP95,droppedFrames,battery,memory,energy)
+steps <- 0
+WHILE NOT STEADY(metrics) AND steps<MAX_STEPS DO
+  options <- neighbouring configurations (quality±1, cache±1, prefetch±1)
+  FOR EACH option DO estimate[option] <- PREDICT(drops + lambda*energy + quality penalty) END FOR
+  best <- argmin estimate
+  IF estimate[best] < CURRENT_COST THEN params <- APPLY(best) END IF
+  IF metrics.memory > MEMORY_LIMIT THEN EVICT_LRU(params.cache) END IF
+  IF metrics.battery < 20 THEN params.quality <- LOW; params.prefetch <- 1 END IF
+  metrics <- MEASURE(...); steps++
+END WHILE
+RETURN params
+END PROCEDURE
+
+EXACT SEARCH: enumerate all decode qualities, cache sizes and prefetch distances; minimise frame drops + lambda*energy subject to p95 frame time < 16 ms.

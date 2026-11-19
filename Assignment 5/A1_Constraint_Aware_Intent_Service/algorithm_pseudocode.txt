@@ -1,0 +1,35 @@
+PROCEDURE SCHEDULE_BACKGROUND(S)
+INPUT: S=(Q,R,E,W,C)
+Q: pending items {id,type,priority,size,sensitive,encrypted,attempts,deadline,checkpoint}
+R: running workers; E: battery, charging, network, Doze, permission, login; W: delivered IDs; C: counters
+WHILE Q not empty AND scheduler active DO
+  E <- READ_ENVIRONMENT()
+  IF permission revoked OR user logged out THEN
+     FOR EACH w IN Q DO CANCEL(w); PURGE_TEMP(w); C.cancelled++ END FOR
+     CANCEL_WORK_BY_TAG(); RELEASE_LISTENERS_AND_LOCKS(); RETURN FAILURE_CANCELLED
+  END IF
+  w <- SELECT_NEXT(Q, priority descending, deadline ascending)
+  component <- IF w critical THEN explicit Intent -> foreground NotificationService
+               ELSE IF w is periodic collection THEN PeriodicWorkRequest
+               ELSE WorkManager OneTimeWorkRequest
+  IF sensitive AND NOT encrypted AND NOT encryptable THEN REJECT(w); C.rejected++; CONTINUE END IF
+  IF stale deadline expired THEN DISCARD(w); C.discarded++; CONTINUE END IF
+  IF (battery < 20 AND not charging AND not critical) OR network=NONE OR
+     (network=POOR AND not critical) OR (Doze AND not critical AND no maintenance window) OR
+     running count = MAX_WORKERS THEN
+       DEFER(w); RETAIN_ENCRYPTED(w, checkpoint, idempotency_key); C.deferred++; CONTINUE
+  END IF
+  ENQUEUE(component,w); R.add(w); C.enqueued++; UPDATE_PEAK(C)
+  result <- EXECUTE_OR_RESUME(w, checkpoint)
+  IF result=SUCCESS THEN
+      W.add(w.id); MARK_DELIVERED(w.id); DELETE_LOCAL_CIPHERTEXT_AFTER_ACK(w); C.success++
+      IF w critical THEN SEND_NOTIFICATION(w) END IF
+  ELSE IF result=TRANSIENT_FAILURE THEN
+      ROLLBACK_TO_CHECKPOINT(w); attempts++; DEFER_WITH_EXPONENTIAL_BACKOFF(w); C.deferred++
+  ELSE
+      CANCEL(w); RELEASE_RESOURCES(w); C.cancelled++
+  END IF
+  R.remove(w)
+END WHILE
+IF Q empty THEN RETURN SUCCESS ELSE RETURN PARTIAL(backlog=|Q|) END IF
+END PROCEDURE

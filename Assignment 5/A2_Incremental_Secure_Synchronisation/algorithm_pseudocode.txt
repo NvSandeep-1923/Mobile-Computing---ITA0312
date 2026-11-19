@@ -1,0 +1,19 @@
+PROCEDURE SYNC_INCREMENTAL(LocalStore, RemoteAPI, E)
+SyncSet <- empty; Budget <- ENERGY_BUDGET(E.battery)
+Dirty <- records whose version > lastSyncedVersion
+SORT Dirty by priority descending, then size ascending
+FOR EACH R IN Dirty DO
+  IF R.sensitive AND NOT R.encrypted AND NOT ENCRYPT(R) THEN REJECT R; CONTINUE END IF
+  IF E.network=NONE OR (E.network=POOR AND R.priority< HIGH) THEN DEFER R; CONTINUE END IF
+  IF E.battery<20 AND R.priority<HIGH THEN DEFER R; CONTINUE END IF
+  IF COST(SyncSet)+COST(R)>Budget AND R.priority<HIGH THEN DEFER R; CONTINUE END IF
+  IF REMOTE_VERSION(R)>R.baseVersion THEN
+      R <- RESOLVE_CONFLICT(R, remote)  // merge / LWW / vector clock
+      IF R=UNRESOLVABLE THEN QUARANTINE R; CONTINUE END IF
+  END IF
+  ADD R TO SyncSet
+END FOR
+BATCH_UPLOAD(SyncSet)
+FOR EACH R IN SyncSet DO IF ACKED(R) THEN MARK_SYNCED(R) ELSE DEFER R END IF END FOR
+RETURN SyncSet
+END PROCEDURE

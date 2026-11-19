@@ -1,0 +1,1 @@
+{"normal_tests":3,"scales":[{"items":50,"levels":4},{"items":200,"levels":8},{"items":1000,"levels":16}],"counterexample_surface":"The (1,1) joint move is globally best but single-step hill climbing from (2,2) moves to (2,3) and gets trapped."}

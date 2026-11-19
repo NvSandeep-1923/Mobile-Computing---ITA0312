@@ -1,0 +1,8 @@
+A1 TRACE (battery 40%, MAX_WORKERS=2)
+E1 t0 sensor R1: select R1; network good and battery >=20%; execute encrypted upload; deliver R1.
+E2 t1 connectivity lost: select R2; network none; defer and retain encrypted record.
+E3 t2 Doze entered: select R3 routine; no maintenance window; defer R3.
+E4 t3 critical HR alert A1: critical path allowed; explicit Intent starts foreground NotificationService; notify user offline.
+E5 t4 connectivity returns in maintenance window: upload A1/R2; R3 partial upload interrupted; rollback to checkpoint and retry.
+E6 t5 user logout: cancel R3 and pending work by tag; purge temporary files; release listeners/locks.
+Result: R1, A1 and R2 delivered; R3 cancelled; critical notification issued once.

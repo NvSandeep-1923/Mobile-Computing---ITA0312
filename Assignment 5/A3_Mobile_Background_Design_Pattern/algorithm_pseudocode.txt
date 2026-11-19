@@ -1,0 +1,15 @@
+PROCEDURE SCHEDULE_OR_EXECUTE(State)
+WHILE State.pending not empty AND NOT State.terminated DO
+  Env <- OBSERVE(State)
+  Candidates <- GENERATE_CHOICES(State.pending, Env)
+  item <- SELECT(Candidates, priority/deadline policy)
+  choice <- CHOOSE_COMPONENT_OR_BATCH(item, Env)
+  IF PERMANENTLY_INFEASIBLE(item,choice,Env) THEN DISCARD_OR_QUARANTINE(item); CONTINUE END IF
+  IF NOT FEASIBLE(item,choice,Env) THEN DEFER(item,WAKE_CONDITION); CONTINUE END IF
+  State <- COMMIT(State,item,choice)
+  result <- AWAIT(item)
+  IF result=SUCCESS THEN State <- COMPLETE(State,item)
+  ELSE State <- UNDO(State,item); RETRY_OR_DEFER(item) END IF
+END WHILE
+RETURN GOAL_REACHED(State)
+END PROCEDURE

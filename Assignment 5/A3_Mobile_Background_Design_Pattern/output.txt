@@ -1,0 +1,5 @@
+A3 DESIGN TABLE
+Sensor collection: state=sampling rate/buffer/battery/permission; decision=sample, batch or skip; candidates=sensor/interval/worker; feasibility=permission+battery+sensor; goal=required samples; prune=Doze/low battery; undo=stop listener and flush buffer.
+Data sync: state=dirty records/versions/network/backlog; decision=upload/defer/resolve; candidates=batch size/Wi-Fi/cellular/order; feasibility=network+battery+encryption+conflict; goal=consistent delivery; prune=poor network/low battery; undo=rollback partial batch/release locks.
+Push: state=pending messages/token/Doze/DND; decision=deliver/delay/collapse; candidates=priority/channel/silent-visible; feasibility=permission/channel/token; goal=deliver once/in time; prune=DND/Doze/stale; undo=cancel alarm/remove stale notification.
+Common pattern: event-driven constrained state search, feasibility checks, commit or defer, and idempotent recovery. Without undo, a partially uploaded batch may be marked synced and lost; lingering listeners/wakelocks drain battery.

@@ -1,0 +1,8 @@
+A2 PRUNING TRACE — network poor, battery 15%, energy budget 20
+R1: high-priority alert, 5 KB, sensitive/encrypted -> UPLOAD (critical exception).
+R2: low priority, 800 KB, non-sensitive/encrypted -> DEFER (poor network and low battery).
+R3: medium priority, 50 KB, sensitive/not encrypted and encryption fails -> REJECT; prune entire branch containing R3.
+R4: low priority, 300 KB, non-sensitive/encrypted -> DEFER.
+R5: medium priority, 20 KB, sensitive/encrypted -> DEFER (battery below threshold).
+Pruned branch: any SyncSet containing R3 is unsafe; no combination with R4/R5 can repair the missing encryption.
+Changed condition: offline-first eventual consistency invalidates the assumption that remote version always wins; concurrent versions must merge (CRDT/vector clocks/LWW). Network and battery rules remain deferrals, never deletion.

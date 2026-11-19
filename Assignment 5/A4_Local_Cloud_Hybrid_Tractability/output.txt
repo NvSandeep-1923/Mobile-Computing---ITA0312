@@ -1,0 +1,8 @@
+A4 RESOURCE CLASSIFICATION
+1. Tiny on-device image classification: label + confidence; verify against ground truth; ON-DEVICE FEASIBLE; small quantised model runs on NPU.
+2. Cloud speech recognition: transcript; verify word error rate; NETWORK-BOUND (hybrid for latency); large model needs server, network dominates.
+3. Nearby P2P sharing: intact file; verify hash; BATTERY-CRITICAL; Wi-Fi Direct/BLE discovery and radio drain battery.
+4. End-to-end encrypted messaging: endpoint-only readable message; protocol/key checks partly verifiable; SECURITY-CRITICAL; key management and integrity dominate.
+5. Real-time multiplayer sync: consistent state within latency bound; compare states/latency; HYBRID REQUIRED; authoritative server plus prediction/interpolation.
+6. Offline vector tile maps: correct 60-fps frame; measure frame time; BATTERY-CRITICAL (on-device feasible with caching); GPU-heavy but tiles local.
+“Slow” is not a diagnosis: identify bottleneck (CPU/GPU/RAM/radio/battery/thermal), workload, device and metric (frame time, joules, p95 latency). Cloud offload adds latency, network energy, server cost and data exposure; local work uses device battery/compute but keeps data local.

@@ -1,0 +1,3 @@
+A5 EXACT SEARCH
+Enumerate all |R| decode qualities × |C| cache sizes × |P| prefetch distances; evaluate each configuration and minimise frame drops + lambda*energy subject to p95 frame time < 16 ms. Approximate complexity O(|R||C||P|*n*device_profiles).
+Adaptive search reaches a feasible smooth configuration faster but cannot prove global energy optimality; local minima are possible. It trades optimality guarantee for quick response to changing feed/device state.
