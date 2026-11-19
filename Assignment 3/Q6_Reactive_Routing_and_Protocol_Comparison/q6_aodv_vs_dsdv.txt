@@ -1,0 +1,14 @@
+Q6 - AODV Route Discovery (RREQ / RREP)
+S broadcasts RREQ for D
+S forwards RREQ to A
+S forwards RREQ to B
+A forwards RREQ to D
+B forwards RREQ to C
+D returns RREP along reverse path: D -> A -> S
+Installed route: S -> A -> D
+
+AODV vs DSDV summary:
+AODV: reactive; route discovery occurs on demand; control messages follow route requests/failures.
+DSDV: proactive; routing tables are updated continuously; routes may be immediately available.
+Selection: AODV is a reasonable choice for a frequently changing network with intermittent traffic.
+Note: Graph-level teaching example, not a full network simulation.
