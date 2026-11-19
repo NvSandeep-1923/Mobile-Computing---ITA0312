@@ -1,0 +1,3 @@
+Doctor-Tablet home address: 10.20.0.25
+Visited access points: 3
+Final CoA: 192.168.5.25
