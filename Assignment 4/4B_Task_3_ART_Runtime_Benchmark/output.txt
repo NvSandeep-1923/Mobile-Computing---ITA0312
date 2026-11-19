@@ -1,0 +1,9 @@
+4B TASK 3 - RUNTIME BENCHMARK
+CPU primes under 5000 and allocation of 50000 objects: five timed runs; median and samples printed.
+ADB ART commands:
+adb shell dumpsys package com.example.benchmark
+adb shell cmd package compile -m speed-profile -f com.example.benchmark
+adb shell cmd package get-compile-status com.example.benchmark
+adb logcat | grep -i -E 'art|gc'
+adb shell am force-stop com.example.benchmark
+Host benchmark only; it does not alter ART modes or measure Android GC.

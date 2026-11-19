@@ -1,0 +1,15 @@
+4A TASK 2 - SECURE MESSAGING
+Android: FCM/system push; Doze and background limits
+iOS: APNs/system push; Background App Refresh and notification type
+Windows: Push notification service; package and OS background task policy
+
+SCREEN-OFF TRACE
+1. Network stack receives packet
+2. System push service receives notification
+3. OS checks payload type and background policy
+4. Eligible callback or visible notification is dispatched
+5. App stores encrypted message metadata
+6. User opens notification and fetches authenticated content
+
+KILLED PROCESS: visible push may still display; silent callback is not guaranteed.
+Use server-side durable queue, authenticated fetch and idempotent processing.

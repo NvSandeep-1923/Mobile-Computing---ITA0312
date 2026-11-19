@@ -1,0 +1,11 @@
+4B TASK 4 - MOBILE SECURITY AUDIT
+Auth token: shared-file extraction; private storage + Keystore key; partially blocked
+Patient DB: file extraction; encrypted DB + protected key; partially blocked
+API traffic: Wi-Fi interception; TLS + certificate validation; blocks passive interception
+Exported Activity: malicious intent; not exported unless required; blocked if protected
+App update: repackaged APK; package signing verification; blocked absent signing-key compromise
+Location/camera: unauthorised access; runtime permission + user indicator; partially blocked
+
+WEAKENED CONTROL: allow cleartext only with local test endpoint and test data.
+Expected verdict changes TLS-protected -> exposed. Restore HTTPS after test.
+No live patient traffic is inspected.

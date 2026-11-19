@@ -1,5 +1,5 @@
 # Mobile Computing – Assignment 4 (CO4)
 
-Contains twelve task-specific folders: six for Part 4A (design/architecture) and six for Part 4B (engineering/validation). Each task folder has a runnable Python model/helper, captured stdout, PNG console screenshot, and a README explaining scope.
+Twelve task folders: six tasks for Part 4A and six for Part 4B. Every task folder contains a Python source file, captured output, a console screenshot (SVG) and README instructions.
 
-**Evidence boundary:** Device-dependent Android/iOS data (ADB PID/UID/PSS, Android Studio Profiler, ART compilation modes, iOS Instruments and physical battery/energy measurements) must be captured on the student's own device. Included Python outputs are local models or host-side measurements, not fabricated device evidence.
+**Evidence note:** Android/iOS device-dependent values (PID, UID, PSS, ART mode, Profiler, Instruments and physical battery measurements) must be captured on the student's device. Python outputs are local models or host-side measurements, not fabricated device evidence.

@@ -1,0 +1,9 @@
+4B TASK 5 - POWER MANAGEMENT
+DVFS / heterogeneous cores: CPU utilisation and thermal state; frequency/voltage; lower dynamic power
+Doze / App Standby: screen off, stationary, unplugged; defer jobs/network to maintenance windows
+Application batching: non-urgent samples or uploads; fewer wakeups/radio activations
+Short wakelock: bounded critical operation; long locks drain battery
+
+STRESS: low battery + intermittent network
+Increase sample interval, batch uploads, use bounded retry/backoff, preserve emergency override.
+Energy estimates require device-current/voltage or profiler evidence; no physical measurement is fabricated.

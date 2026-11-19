@@ -1,3 +1,7 @@
-# 4A Task 3 Runtime Execution Models
+# 4A Task 3 – Runtime Execution Models
 
-Task folder for Mobile Computing Assignment 4. See Python source, captured output and PNG console screenshot in this folder.
+Compares ART, iOS native execution and CLR/native Windows, plus Android cold-start dependency order.
+
+Files: `4a_task_3_runtime_execution_models.py`, `output.txt`, and `output_screenshot.svg`.
+
+Evidence boundary: Device-dependent output must be captured on the student's actual Android/iOS device. This folder labels local models and host-side runs appropriately.

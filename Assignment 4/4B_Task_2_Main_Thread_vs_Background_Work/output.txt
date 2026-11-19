@@ -1,0 +1,6 @@
+4B TASK 2 - MAIN THREAD VS BACKGROUND
+Iterations: 500000
+Main execution and worker elapsed times are measured when run.
+The two paths should return the same deterministic result.
+Worker execution protects the Android UI thread; these are host timings, not Android measurements.
+Tiny tasks may be slower in a worker due to scheduling overhead; use bounded workers/batching.

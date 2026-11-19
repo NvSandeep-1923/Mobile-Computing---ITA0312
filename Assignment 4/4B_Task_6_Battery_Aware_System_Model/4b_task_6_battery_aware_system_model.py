@@ -1,0 +1,13 @@
+def choose(battery,charging,network,motion,emergency=False):
+ if emergency:return ("EMERGENCY","high-priority alert","immediate")
+ if battery<=15 and not charging:return ("CRITICAL","minimum safe sampling","defer unless urgent")
+ if network=="offline":return ("OFFLINE","normal sampling + local queue","sync after reconnect")
+ if motion=="moving":return ("NORMAL","regular sampling","batch at threshold/deadline")
+ return ("SAVER","reduced stationary sampling","batch upload")
+print("4B TASK 6 - BATTERY-AWARE SYSTEM MODEL")
+for case,args in [("Normal Wi-Fi",(80,False,"wifi","stationary",False)),("Low battery",(12,False,"mobile","moving",False)),("Offline",(48,False,"offline","stationary",False)),("Emergency",(8,False,"offline","stationary",True))]: print(case,"=>",choose(*args))
+print("\nVALIDATION")
+print("Normal: batch upload on Wi-Fi. Low: reduce non-urgent work.")
+print("Offline: persist records and retry idempotently after connection returns.")
+print("Emergency: override power-saving delay for priority alert.")
+print("5,000 devices: server queues, partitions, rate limits, jittered retry and priority lanes.")

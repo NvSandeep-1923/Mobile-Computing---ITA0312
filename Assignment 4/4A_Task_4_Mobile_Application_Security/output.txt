@@ -1,0 +1,14 @@
+4A TASK 4 - SECURITY DEFECTS AND REPAIRS
+1. Request all permissions up front
+   Repair: Request dangerous permission in context; least privilege
+2. Token in shared readable file
+   Repair: Use app-private encrypted storage and Keystore-backed key
+3. Updates from any source
+   Repair: Verify trusted distribution and package signing identity
+4. Plain HTTP
+   Repair: Enforce HTTPS/TLS, validate certificate, disable cleartext
+
+REGRESSION: request contacts only when user selects contact feature.
+Denied permission must not block unrelated note creation.
+Confidentiality first fails when malicious app reads the shared token file.
+No exploit is executed; this is a safe local audit model.

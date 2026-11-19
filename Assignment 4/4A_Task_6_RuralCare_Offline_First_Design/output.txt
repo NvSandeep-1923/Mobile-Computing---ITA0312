@@ -1,0 +1,7 @@
+4A TASK 6 - RURALCARE OFFLINE-FIRST
+Queued UUID records with sequence number, payload hash and PENDING state.
+
+Sync test: server commits first UUID; acknowledgement is lost; client retries same UUID.
+Retry returns existing acknowledgement: ACK-0001
+Server logical record count: 1
+A/B: encrypted durable queue. C: minimal safe data only; block sensitive offline capture if secure storage is absent.

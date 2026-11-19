@@ -1,0 +1,14 @@
+4B TASK 1 - PROCESS/MEMORY OBSERVATION TEMPLATE
+Host OS and PID are shown by local execution; they are not Android PID/UID/PSS evidence.
+Foreground: onResume; low kill priority
+Background 5 min: onStop / cached; may be trimmed
+Low-memory trim: onTrimMemory may occur; process may be killed
+
+RUN ON ANDROID DEVICE:
+adb shell getprop ro.build.version.release
+adb shell ps -A
+adb shell dumpsys activity processes
+adb shell dumpsys meminfo <package.name>
+adb shell service list
+adb shell cat /proc/<pid>/status
+adb logcat -d | grep -E 'ActivityTaskManager|am_|GC|lifecycle'

@@ -1,0 +1,11 @@
+4B TASK 6 - BATTERY-AWARE SYSTEM MODEL
+Normal Wi-Fi => NORMAL sampling; batch upload
+Low battery => CRITICAL; minimum safe sampling; defer unless urgent
+Offline => OFFLINE; local queue; sync after reconnect
+Emergency => EMERGENCY; high-priority alert immediately
+
+VALIDATION
+Normal: batch upload on Wi-Fi. Low: reduce non-urgent work.
+Offline: persist records and retry idempotently after connection returns.
+Emergency: override power-saving delay for priority alert.
+5,000 devices: server queues, partitions, rate limits, jittered retry and priority lanes.

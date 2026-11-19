@@ -1,0 +1,11 @@
+4A TASK 5 - POWER STATES
+ACTIVE: user interaction / urgent event; foreground UI and bounded work
+IDLE: screen off, no interaction; system tasks and batched sampling
+SUSPENDED_DOZE: stationary, unplugged, screen off; restricted wake events and permitted jobs
+CHARGING_MAINTENANCE: power connected; batch upload, backup, indexing
+
+BATTERY SAVER AT 15%
+Kernel: lower frequency/voltage and limit wakeups.
+Runtime: defer nonessential compilation and maintenance.
+App: batch uploads, reduce stationary sampling, defer non-urgent work.
+Preserve urgent alerts and disclose reduced precision.

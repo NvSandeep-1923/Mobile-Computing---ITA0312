@@ -1,0 +1,15 @@
+4A TASK 3 - RUNTIME MODELS
+Android ART: DEX; interpretation + JIT + profile-guided AOT; managed heap / GC
+iOS: signed Mach-O; native compiled code; ARC reference counting
+Windows: .NET assembly or PE; CLR JIT or native code; CLR GC / native ownership
+
+ANDROID COLD START
+1. Launcher requests Activity
+2. ActivityTaskManager resolves component
+3. Zygote forks isolated process
+4. ART maps/verifies DEX and initialises heap
+5. Application object is created
+6. Activity lifecycle callback runs
+7. UI layout and rendering occur
+8. First frame is displayed
+Warm start can reuse a live process; a killed process requires process initialisation.
