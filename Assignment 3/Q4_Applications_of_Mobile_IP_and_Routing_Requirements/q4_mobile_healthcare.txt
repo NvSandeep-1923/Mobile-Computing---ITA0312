@@ -1,0 +1,24 @@
+Q4 - Mobile Healthcare / Mobile IP Communication Flow
+Mobile node: Doctor-Tablet | Home address: 10.20.0.25
+Correspondent node: Hospital Patient-Record Server
+
+Location: Hospital-Ward
+  Obtain Care-of Address: 172.20.1.25
+  Register new location with Home Agent
+  Home Agent binding: 10.20.0.25 -> 172.20.1.25
+  Secure request for patient record -> tunnel/route -> tablet
+
+Location: Ambulance-Network
+  Obtain Care-of Address: 172.30.1.25
+  Register new location with Home Agent
+  Home Agent binding: 10.20.0.25 -> 172.30.1.25
+  Secure request for patient record -> tunnel/route -> tablet
+
+Location: Emergency-Ward
+  Obtain Care-of Address: 192.168.5.25
+  Register new location with Home Agent
+  Home Agent binding: 10.20.0.25 -> 192.168.5.25
+  Secure request for patient record -> tunnel/route -> tablet
+
+Requirements: low delay, reliable delivery, authentication, privacy and efficient handoff.
+Note: Workflow demonstration only; no patient data or live network is used.
