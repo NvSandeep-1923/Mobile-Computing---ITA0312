@@ -1,0 +1,8 @@
+B4 - Video Encoding / Upload Heuristic
+D1: heuristic=720p 5Mbps energy=17.5J time=5.8s batteryImpact=0.042% upload=now | exhaustive best=480p 1Mbps cost=15.9
+D2: heuristic=480p 2.5Mbps energy=13.1J time=5.6s batteryImpact=0.031% upload=now | exhaustive best=480p 1Mbps cost=17.7
+D3: heuristic=480p 1Mbps energy=13.5J time=9.0s batteryImpact=0.032% upload=Wi-Fi | exhaustive best=480p 1Mbps cost=21.6
+D4: heuristic=480p 1Mbps energy=10.6J time=4.5s batteryImpact=0.025% upload=charging | exhaustive best=480p 1Mbps cost=16.4
+D5: heuristic=480p 1Mbps energy=10.4J time=4.3s batteryImpact=0.025% upload=now | exhaustive best=480p 1Mbps cost=16.1
+Challenge: D4 has 12% battery but Wi-Fi and modest clip energy; fixed low-battery rule defers and forces 480p, while exhaustive cost may select higher quality.
+Production decision: heuristic offers a small constant number of comparisons, not optimality. Monitor p95 encode/upload, battery/clip, thermal throttling, success, deferral and quality complaints.

@@ -1,0 +1,9 @@
+B3 - Exact vs Adaptive Feed Optimisation
+Test 1: exact=(6.023, 3, 1); adaptive=(6.023, 3, 1); match=True; neighbour_evaluations=11
+Test 2: exact=(27.715, 1, 1); adaptive=(27.715, 1, 1); match=True; neighbour_evaluations=9
+Test 3: exact=(2.2785, 4, 1); adaptive=(2.2785, 4, 1); match=True; neighbour_evaluations=13
+Counterexample: start (2,2) cost 7.39; best neighbour (2,3) cost 7.23; no adjacent improvement -> stop, but exact global best (1,1) cost 6.92.
+Scale N=50, grid=4x4: exact configs=16, exact item evaluations=800, adaptive configs~10, adaptive item evaluations~500
+Scale N=200, grid=8x8: exact configs=64, exact item evaluations=12800, adaptive configs~10, adaptive item evaluations~2000
+Scale N=1000, grid=16x16: exact configs=256, exact item evaluations=256000, adaptive configs~10, adaptive item evaluations~10000
+Trade-off: fewer configurations/evaluations and online adaptation; no global optimality guarantee (local minimum possible).

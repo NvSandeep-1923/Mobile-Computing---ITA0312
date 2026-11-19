@@ -1,0 +1,12 @@
+B1 - Instrumented Background Scheduler
+Scenario: GOOD
+FIFO {"backlog": 0, "cancelled": 0, "critical_delay": [0, 1, 2, 3], "deferred": 0, "enqueued": 12, "peak_workers": 3, "success": 12}
+PRIORITY {"backlog": 0, "cancelled": 0, "critical_delay": [0, 0, 0, 1], "deferred": 0, "enqueued": 12, "peak_workers": 3, "success": 12}
+Scenario: DOZE
+FIFO {"backlog": 3, "cancelled": 0, "critical_delay": [0, 1, 2, 4], "deferred": 51, "enqueued": 9, "peak_workers": 3, "success": 9}
+PRIORITY {"backlog": 5, "cancelled": 0, "critical_delay": [0, 0, 0, 1], "deferred": 96, "enqueued": 7, "peak_workers": 3, "success": 7}
+Scenario: PERMISSION_REVOKED
+FIFO {"backlog": 0, "cancelled": 9, "critical_delay": [0], "deferred": 0, "enqueued": 3, "peak_workers": 3, "success": 3}
+PRIORITY {"backlog": 0, "cancelled": 9, "critical_delay": [0, 0, 0], "deferred": 0, "enqueued": 3, "peak_workers": 3, "success": 3}
+Priority rule: priority ascending (0=critical), then arrival/ID; infeasible priority items are skipped without blocking later candidates.
+Model scope: WorkManager-style scheduler simulation, not a real Android Service execution.
