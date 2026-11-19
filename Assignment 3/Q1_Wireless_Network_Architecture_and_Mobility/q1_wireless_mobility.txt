@@ -1,0 +1,8 @@
+Q1 - Wireless Mobility / Handoff Simulation
+Scenario | Sent | Delivered | Lost | PDR | Handoff delay
+Low      |   20 |        20 |    0 | 100.0% |     10 ms
+Medium   |   20 |        18 |    2 |  90.0% |     30 ms
+High     |   20 |        15 |    5 |  75.0% |     50 ms
+
+CSV saved: mobility_results.csv
+Note: Parameters are illustrative, not measured from a physical wireless network.
