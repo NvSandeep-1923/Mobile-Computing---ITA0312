@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700"><rect width="100%" height="100%" fill="#111827" rx="14"/><text x="30" y="38" font-family="Arial" font-size="19" fill="#f9fafb">Python 3 — Task 08 execution output</text><g font-family="Consolas,monospace" font-size="16" fill="#d1fae5">
+<text x="28" y="82">MOBILE COMPUTING - ASSIGNMENT 1 (CO1)</text>
+<text x="28" y="110">Cellular Frequency Planning Simulation</text>
+<text x="28" y="138">======================================================</text>
+<text x="28" y="166">N = 3 | 112 channels/cell | 1.5 km | 99.62 Erlangs</text>
+<text x="28" y="194">path-loss n = 2.5: SIR 4.15 dB</text><text x="28" y="222">path-loss n = 3: SIR 6.53 dB</text><text x="28" y="250">path-loss n = 4: SIR 11.3 dB</text>
+<text x="28" y="286">N = 4 | 84 channels/cell | 1.732 km | 72.53 Erlangs</text>
+<text x="28" y="314">path-loss n = 2.5: SIR 5.71 dB</text><text x="28" y="342">path-loss n = 3: SIR 8.41 dB</text><text x="28" y="370">path-loss n = 4: SIR 13.8 dB</text>
+<text x="28" y="406">N = 7 | 48 channels/cell | 2.291 km | 38.39 Erlangs</text>
+<text x="28" y="434">path-loss n = 2.5: SIR 8.75 dB</text><text x="28" y="462">path-loss n = 3: SIR 12.05 dB</text><text x="28" y="490">path-loss n = 4: SIR 18.66 dB</text>
+<text x="28" y="526">N = 12 | 28 channels/cell | 3 km | 20.15 Erlangs</text>
+<text x="28" y="554">path-loss n = 2.5: SIR 11.67 dB</text><text x="28" y="582">path-loss n = 3: SIR 15.56 dB</text><text x="28" y="610">path-loss n = 4: SIR 23.34 dB</text>
+<text x="28" y="646">Valid clusters: [1, 3, 4, 7, 9, 12, 13, 16, 19] | subscribers: 25, 250, 500, 2500 Erlangs</text></g></svg>
