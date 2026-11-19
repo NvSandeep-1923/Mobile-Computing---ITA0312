@@ -1,0 +1,9 @@
+Q5 - DSDV Proactive Routing Table Updates
+Initial table: {'D': {'next_hop': 'B', 'hops': 3, 'seq': 10}}
+Node C advertises route to D via A, hops=2, seq=12: UPDATED
+Node D advertises route to D via C, hops=1, seq=12: UPDATED
+Node E advertises route to D via E, hops=4, seq=8: IGNORED (older sequence or longer route)
+
+Final routing table:
+Destination D: next hop=C, hops=1, sequence=12
+Note: Small DSDV-style logic demonstration, not a full protocol simulator.
