@@ -1,0 +1,6 @@
+S broadcasts RREQ for D
+S forwards RREQ to A
+S forwards RREQ to B
+A forwards RREQ to D
+B forwards RREQ to C
+D returns RREP along reverse path: D -> A -> S
