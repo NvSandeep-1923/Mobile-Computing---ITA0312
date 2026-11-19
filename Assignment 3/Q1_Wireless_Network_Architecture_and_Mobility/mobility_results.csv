@@ -1,0 +1,4 @@
+Mobility,Packets Sent,Packets Delivered,Packets Lost,Delivery Ratio (%),Illustrative Handoff Delay (ms)
+Low,20,20,0,100.0,10
+Medium,20,18,2,90.0,30
+High,20,15,5,75.0,50
