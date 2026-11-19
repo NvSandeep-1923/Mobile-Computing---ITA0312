@@ -1,0 +1,22 @@
+Q2 - Mobile IP Worked Example
+Mobile Node home address: 10.0.0.7
+
+[Registration] Mobile Node enters Foreign-Network-A
+  Obtains Care-of Address: 172.16.1.7
+  Sends registration request to Home Agent
+  Home Agent accepts registration and updates binding
+  Binding: 10.0.0.7 -> 172.16.1.7
+
+[Registration] Mobile Node enters Foreign-Network-B
+  Obtains Care-of Address: 192.168.2.7
+  Sends registration request to Home Agent
+  Home Agent accepts registration and updates binding
+  Binding: 10.0.0.7 -> 192.168.2.7
+
+[Packet delivery through Home Agent tunnel]
+  PKT-001: intercept at Home Agent -> encapsulate -> tunnel to 192.168.2.7 -> decapsulate -> deliver
+  PKT-002: intercept at Home Agent -> encapsulate -> tunnel to 192.168.2.7 -> decapsulate -> deliver
+  PKT-003: intercept at Home Agent -> encapsulate -> tunnel to 192.168.2.7 -> decapsulate -> deliver
+
+Summary: 2 successful registrations, 3 packets delivered via the latest Care-of Address.
+Note: This is a logical worked example; no real Mobile IP network is contacted.
