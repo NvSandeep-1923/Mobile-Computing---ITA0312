@@ -1,0 +1,8 @@
+Q7 - Emergency Ad Hoc Network / AODV-Style Route Discovery
+Ambulance -> Hospital: Ambulance -> Rescue-1 -> Gateway -> Hospital
+Police -> Hospital: Police -> Rescue-2 -> Gateway -> Hospital
+
+[Link failure test] Gateway <-> Rescue-1 link fails
+Ambulance -> Hospital after failure: Ambulance -> Police -> Rescue-2 -> Gateway -> Hospital
+Result: alternate path selected when one path is unavailable.
+Note: Illustrative graph simulation, not a packet-level ns-3/OMNeT++ experiment.
