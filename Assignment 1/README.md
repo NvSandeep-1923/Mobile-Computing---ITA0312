@@ -1,0 +1,3 @@
+# Mobile Computing — Assignment 1 (CO1)
+
+Source: uploaded assignment report. The report contains 12 written tasks and one complete runnable Python programme, under Task 8. That programme and its captured console output are stored in the Task 08 folder. Tasks 1–7 and 9–12 are analytical/design/report tasks; the source document does not supply separate runnable Python scripts or execution screenshots for them. Their folders include notes rather than fabricated code or screenshots.
