@@ -1,5 +1,9 @@
 # Q6 – Reactive Routing and Protocol Comparison
 
-The supplied assignment studies AODV route discovery (RREQ), route reply (RREP), route error (RERR), route maintenance, and AODV-versus-DSDV comparison. Its prescribed deliverable is algorithmic protocol analysis/pseudocode, not Python source code.
+**Python demonstration:** `q6_aodv_vs_dsdv.py`
 
-No Python file or fabricated output screenshot is included.
+Models on-demand AODV route discovery using RREQ forwarding and an RREP along the reverse path, then summarizes the assignment's AODV-versus-DSDV distinction.
+
+**Files:** Python source, captured console output, console-output image, and route-discovery trace.
+
+**Scope:** This is a graph-level teaching example, not a full network simulator.
