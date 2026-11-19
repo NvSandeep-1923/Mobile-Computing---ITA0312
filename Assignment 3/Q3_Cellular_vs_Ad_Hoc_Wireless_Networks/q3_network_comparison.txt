@@ -1,0 +1,14 @@
+Q3 - Cellular vs Ad Hoc Wireless Networks
+Parameter            | Cellular                      | Ad Hoc
+------------------------------------------------------------------------------------------
+Infrastructure       | Required (base stations)      | Not required
+Communication        | Through base stations         | Direct or multi-hop
+Routing              | Infrastructure-assisted       | Distributed routing
+Mobility             | Handoff between cells         | Dynamic topology / route changes
+Topology             | Planned cells                 | Frequently changing
+Scalability          | Generally high                | Depends on network size
+Failure handling     | Alternative infrastructure    | Other nodes / alternate paths
+Applications         | Public mobile service         | Disaster / field networks
+
+Decision: Use an ad hoc network when fixed infrastructure is unavailable.
+Note: Qualitative comparison based on the assignment answer, not a performance benchmark.
