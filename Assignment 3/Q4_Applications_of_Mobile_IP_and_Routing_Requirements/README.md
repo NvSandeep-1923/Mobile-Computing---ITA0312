@@ -1,5 +1,9 @@
 # Q4 – Applications of Mobile IP and Routing Requirements
 
-The supplied assignment selects a Mobile Healthcare System and asks for application architecture, Mobile IP communication flow, delay, packet delivery, connectivity, security and reliability requirements. It does not request a Python program.
+**Python demonstration:** `q4_mobile_healthcare.py`
 
-No Python file or fabricated output screenshot is included.
+Models the assignment's Mobile Healthcare System scenario. A doctor tablet moves through a hospital ward, ambulance network and emergency ward; the Home Agent binding is updated with each Care-of Address and patient-record access is illustrated.
+
+**Files:** Python source, captured console output, console-output image, and text flow trace.
+
+**Scope:** Workflow demonstration only; it uses no patient data and contacts no live network.
