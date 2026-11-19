@@ -1,0 +1,3 @@
+Home address: 10.0.0.7
+Final CoA: 192.168.2.7
+Packets delivered: PKT-001, PKT-002, PKT-003
